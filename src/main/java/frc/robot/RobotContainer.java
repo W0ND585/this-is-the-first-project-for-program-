@@ -42,6 +42,8 @@ public class RobotContainer {
    * joysticks}.
    */
   private void configureBindings() {
+    m_driverController.y().whileTrue(m_exampleSubsystem.upCommand());
+    m_driverController.a().whileTrue(m_exampleSubsystem.downCommand());
     // Schedule `ExampleCommand` when `exampleCondition` changes to `true`
     new Trigger(m_exampleSubsystem::exampleCondition)
         .onTrue(new ExampleCommand(m_exampleSubsystem));
